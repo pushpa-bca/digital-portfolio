@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>P. Pushpakala Portfolio</title>
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      font-family: 'Roboto', sans-serif;
+
+      background: linear-gradient(135deg, #fff6f6, #ffecec);
+
+      color: #444;
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+
+    }
+
+    /* Navbar */
+
+    nav {
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      background: #ffd9d9;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 15px 30px;
+
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+      z-index: 1000;
+
+    }
+
+    nav .logo {
+
+      font-size: 1.6em;
+
+      font-weight: bold;
+
+      color: #e68a9e;
+
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+
+    }
+
+    nav ul {
+
+      list-style: none;
+
+      display: flex;
+
+      gap: 20px;
+
+    }
+
+    nav ul li a {
+
+      text-decoration: none;
+
+      color: #555;
+
+      font-weight: 500;
+
+      transition: color 0.3s ease;
+
+    }
+
+    nav ul li a:hover {
+
+      color: #e68a9e;
+
+      text-shadow: 0px 0px 5px rgba(230,138,158,0.6);
+
+    }
+
+    /* Header */
+
+    header {
+
+      background: linear-gradient(135deg, #ffe4e1, #fff0f5);
+
+      text-align: center;
+
+      padding: 110px 20px 70px;
+
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+
+      position: relative;
+
+      margin-top: 60px;
+
+    }
+
+    /* Profile Photo */
+
+    .profile-photo {
+
+      width: 160px;
+
+      height: 160px;
+
+      margin: 0 auto 20px;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      border: 6px solid #fff;
+
+      box-shadow: 0 8px 20px rgba(230,138,158,0.4);
+
+      animation: bounceIn 2s ease;
+
+    }
+
+    .profile-photo img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+    @keyframes bounceIn {
+
+      0% { transform: scale(0.5); opacity: 0; }
+
+      60% { transform: scale(1.1); opacity: 1; }
+
+      100% { transform: scale(1); }
+
+    }
+
+    header h1 {
+
+      font-size: 3em;
+
+      color: #e68a9e;
+
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+
+    }
+
+    header p {
+
+      margin-top: 10px;
+
+      font-size: 1.2em;
+
+      color: #555;
+
+    }
+
+    /* Sections */
+
+    section {
+
+      max-width: 900px;
+
+      margin: 40px auto;
+
+      padding: 40px;
+
+      background: linear-gradient(135deg, #fffafa, #fff5f7);
+
+      border-radius: 20px;
+
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+      position: relative;
+
+    }
+
+    section h2 {
+
+      color: #e68a9e;
+
+      margin-bottom: 20px;
+
+      position: relative;
+
+    }
+
+    section h2::after {
+
+      content: '';
+
+      width: 60px;
+
+      height: 4px;
+
+      background: #ffb7c5;
+
+      display: block;
+
+      margin-top: 5px;
+
+      border-radius: 2px;
+
+    }
+
+    ul {
+
+      list-style-type: none;
+
+      padding-left: 0;
+
+    }
+
+    ul li {
+
+      background: #ffe8eb;
+
+      margin-bottom: 10px;
+
+      padding: 12px 15px;
+
+      border-radius: 12px;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    ul li:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow: 0 6px 15px rgba(230,138,158,0.3);
+
+    }
+
+    .contact a {
+
+      display: inline-block;
+
+      margin-bottom: 10px;
+
+      color: #fff;
+
+      text-decoration: none;
+
+      background: #e68a9e;
+
+      padding: 8px 15px;
+
+      border-radius: 12px;
+
+      transition: background 0.3s ease;
+
+    }
+
+    .contact a:hover {
+
+      background: #ffb7c5;
+
+    }
+
+    footer {
+
+      text-align: center;
+
+      padding: 20px;
+
+      background: #ffd9d9;
+
+      color: #555;
+
+      border-top: 1px solid #ffc9d1;
+
+      margin-top: 40px;
+
+    }
+
+    /* Floating Shapes */
+
+    .shape {
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      opacity: 0.2;
+
+      animation: float 6s infinite ease-in-out alternate;
+
+    }
+
+    .shape1 { width: 160px; height: 160px; background: #ffe4e1; top: -50px; left: -50px; }
+
+    .shape2 { width: 100px; height: 100px; background: #ffb6c1; bottom: -30px; right: -30px; }
+
+    .shape3 { width: 130px; height: 130px; background: #e68a9e; top: 20px; right: -60px; }
+
+    @keyframes float {
+
+      from { transform: translateY(0px); }
+
+      to { transform: translateY(20px); }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+  <div class="logo">Push🧸✨</div>
+
+  <ul>
+
+    <li><a href="#home">Home</a></li>
+
+    <li><a href="#about">About</a></li>
+
+    <li><a href="#projects">Projects</a></li>
+
+    <li><a href="#contact">Contact</a></li>
+
+  </ul>
+
+</nav>
+
+<!-- Header -->
+
+<header id="home">
+
+  <div class="shape shape1"></div>
+
+  <div class="shape shape2"></div>
+
+  <div class="shape shape3"></div>
+
+  <!-- Profile Photo -->
+
+  <div class="profile-photo">
+<a href="https://ibb.co/67B64V09"><img src="https://i.ibb.co/67B64V09/IMG-20250824-WA0032.jpg" alt="IMG-20250824-WA0032" border="0"></a>
+    
+
+  </div>
+
+  <h1>Hello, I'm P. Pushpakala</h1>
+
+  <p>BCA Student | Creative Thinker | Art & Makeup Enthusiast</p>
+
+</header>
+
+<!-- About -->
+
+<section id="about">
+
+  <h2>About Me</h2>
+
+  <p> "I'm Pushpa, a self-motivated, creative, and passionate individual with a love for learning and exploring new things. With a keen eye for detail and a drive to succeed, I strive to make a positive impact in everything I do. In my free time, I enjoy expressing my creativity through drawing and art, as well as experimenting with makeup. I'm also excited to learn and grow in the field of UI designing, where I can combine my artistic skills with technical expertise. I'm looking forward to connecting with like-minded individuals and sharing my experiences!" </p>
+
+
+
+  </ul>
+
+  <h2>Education</h2>
+
+  <ul>
+
+    <li>Studied: P. L. W. A. Hr Sec School, Vickramasingapuram, Tirunelveli</li>
+
+    <li>Currently pursuing: Apollo Arts and Science College, Chennai
+    Degree: Bachelor of cost application (BCA)
+    Year:2024-2027</li>
+
+  </ul>
+ <h2>Goals</h2>
+
+  <ul>
+
+    <li><strong>Short Term:</strong> "My short-term goal is to excel in my upcoming exams, securing outstanding marks that reflect my hard work and dedication. I am committed to studying diligently, staying focused, and utilizing effective learning strategies to achieve academic excellence."
+
+</li>
+
+      <li><strong>Long Term Goal:</strong> 
+
+"My aspiration is to secure a fulfilling role in the education sector, specializing in BCA, where I can share my knowledge, inspire students, and contribute to shaping the next generation of tech professionals."</li>
+
+ 
+  <h2>Skills</h2>
+
+  <ul>
+
+    <li>Drawing & Art</li>
+
+    <li>Makeup</li>
+
+    <li>Creative Thinking</li>
+
+    <li>Interest in UI Design</li>
+
+  </ul>
+<h2>Soft skills: </h2>
+
+    <ul>
+
+      <li>
+
+I have developed several important soft skills as a student. I enjoy working with others and believe in teamwork and collaboration, which has helped me during group projects and activities. I also try to show leadership whenever possible by taking responsibility and guiding others. Creativity is one of my strengths, and I like to bring new ideas and solutions to my work. I am good at solving problems and handling challenges with a positive approach. Time management is another skill I practice by balancing my studies and personal activities effectively. I can easily adapt to new situations and changes, and I try to make confident decisions when required. I am also an active listener who respects others’ opinions and stays motivated to do my best.
+
+</li> </ul>
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+
+  <h2>Projects</h2>
+
+  <p>Coming soon...</p>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+
+  <h2>Contact</h2>
+
+  <div class="contact">
+
+    <a href="mailto:pushpateddy44@gmail.com">pushpateddy44@gmail.com</a>
+
+    <a href="mailto:pushpabca24.aascc@gmail.com">pushpabca24.aascc@gmail.com</a>
+
+    <p>Phone: 9344633661</p>
+
+  </div>
+
+</section>
+
+<footer>
+
+  &copy; 2025 P. Pushpakala. All rights reserved.
+
+</footer>
+
+</body>
+
+</html>
